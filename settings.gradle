@@ -1,0 +1,9 @@
+include ':presentation:enter'
+include ':presentation:mainboard'
+include ':platform'
+include ':environment'
+include ':presentation'
+include ':domain'
+include ':data'
+include ':app'
+rootProject.name = "SellProducts"

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/loginButton"
+        style="@style/RoundedCornerButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:textAppearance="@android:color/white"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/login_button_login"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/recoveryButton"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/forgotButton"
+        style="@style/OutlinedRoundedCornerButton"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="@string/login_forgot_password"
+        android:textAppearance="@style/SellProductsText.Medium.Plus"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/loginButton"
+        app:layout_constraintStart_toStartOf="@+id/loginButton"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+
+</merge>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DialogAnimationSlideRight">
+        <item name="android:windowEnterAnimation">
+            @anim/slide_in_right
+        </item>
+        <item name="android:windowExitAnimation">
+            @anim/slide_out_right
+        </item>
+    </style>
+
+    <style name="SellProductsAppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@android:color/black</item>
+    </style>
+
+    <style name="SellProductsTextFonts">
+        <item name="fontFamily">sans-serif</item>
+    </style>
+
+    <style name="SellProductsHintText" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="SellProductsCounterText" parent="TextAppearance.Design.Counter">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="SellProductsCounterOverFlow" parent="TextAppearance.Design.Counter.Overflow">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/holo_orange_dark</item>
+    </style>
+
+    <style name="SellProductsTextPrimary" parent="SellProductsTextFonts">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="RoundedCornerButton" parent="Widget.MaterialComponents.Button">
+        <item name="shapeAppearanceOverlay">@style/RoundedShapeAppearance</item>
+    </style>
+
+    <style name="OutlinedRoundedCornerButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="shapeAppearanceOverlay">@style/RoundedShapeAppearance</item>
+    </style>
+
+    <style name="SellProductsText.Small" parent="SellProductsTextPrimary">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="SellProductsText.Small.Plus" parent="SellProductsTextPrimary">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="SellProductsText.Medium" parent="SellProductsTextPrimary">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="SellProductsText.Medium.Plus" parent="SellProductsTextPrimary">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="SellProductsText.Large" parent="SellProductsTextPrimary">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="RoundedShapeAppearance" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+        <item name="strokeColor">@android:color/black</item>
+        <item name="cornerSize">32dp</item>
+    </style>
+
+</resources>

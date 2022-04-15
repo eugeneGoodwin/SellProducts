@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/enroll_nav_graph"
+    app:startDestination="@id/registrationFragment">
+
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.vortex.soft.sellproducts.enter.enroll.registration.RegistrationFragment">
+    </fragment>
+
+</navigation>

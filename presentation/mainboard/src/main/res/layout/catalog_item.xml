@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/productCard"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginTop="16dp"
+
+    android:paddingTop="0dp"
+
+    android:clickable="true"
+    android:focusable="true"
+
+    app:strokeWidth="1dp"
+    app:strokeColor="@android:color/darker_gray"
+    app:cardElevation="0dp"
+
+    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="@android:color/white"
+
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:src="@drawable/ic_products"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/productNameText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="ProductName"
+            style="@style/SellProductsText.Small.Plus"
+            app:layout_constraintBottom_toTopOf="@+id/productDescriptionText"
+            app:layout_constraintEnd_toStartOf="@+id/priceText"
+            app:layout_constraintStart_toEndOf="@+id/productImage"
+            app:layout_constraintTop_toTopOf="@+id/productImage" />
+
+        <TextView
+            android:id="@+id/productDescriptionText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Product Description"
+            style="@style/SellProductsText.Small.Plus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/priceText"
+            app:layout_constraintStart_toEndOf="@+id/productImage"
+            app:layout_constraintTop_toBottomOf="@+id/productNameText" />
+
+        <TextView
+            android:id="@+id/priceText"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginEnd="16dp"
+            android:text="100 $"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.455" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

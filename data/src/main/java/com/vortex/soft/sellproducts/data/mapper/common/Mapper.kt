@@ -1,0 +1,23 @@
+package com.vortex.soft.sellproducts.data.mapper.common
+
+interface CommonMapper<D, J, S> : JsonMapper<D, J>, SqlMapper<D, S>, DataMapper<J, S>
+
+interface LayerMapper<D, J, S> : JsonMapper<D, J>, SqlMapper<D, S>
+
+interface SqlMapper<D, S> {
+    fun mapSqlToDomain(type: S): D
+
+    fun mapDomainToSql(type: D): S
+}
+
+interface JsonMapper<D, J> {
+    fun mapJsonToDomain(type: J): D
+
+    fun mapDomainToJson(type: D): J
+}
+
+interface DataMapper<J, S> {
+    fun mapSqlToJson(type: S): J
+
+    fun mapJsonToSql(type: J): S
+}

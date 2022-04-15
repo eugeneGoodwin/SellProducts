@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fadeScrollbars="false"
+    android:scrollbars="vertical"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/preloaderLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone">
+            <include layout="@layout/preloader_layout"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/preloaderLayout"
+            android:background="@android:color/white">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/verticalStartGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="32dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/verticalEndGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="32dp" />
+
+            <TextView
+                android:id="@+id/headerTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:text="@string/catalog_header"
+                android:gravity="center"
+                android:textAppearance="@style/SellProductsText.Large"
+                app:layout_constraintEnd_toStartOf="@+id/verticalEndGuideline"
+                app:layout_constraintStart_toEndOf="@+id/verticalStartGuideline"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listProducts"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/verticalEndGuideline"
+                app:layout_constraintStart_toEndOf="@+id/verticalStartGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/headerTitle"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

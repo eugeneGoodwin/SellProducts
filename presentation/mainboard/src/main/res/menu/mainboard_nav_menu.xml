@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@id/root_catalog_nav_graph"
+        android:icon="@drawable/ic_products_selector"
+        android:title="Catalog" />
+
+    <item
+        android:id="@id/root_cart_nav_graph"
+        android:icon="@drawable/ic_cart_selector"
+        android:title="Cart" />
+
+    <item
+        android:id="@id/root_orders_nav_graph"
+        android:icon="@drawable/ic_orders_selector"
+        android:title="Orders" />
+
+    <item
+        android:id="@id/root_profile_nav_graph"
+        android:icon="@drawable/ic_user_selector"
+        android:title="Profile" />
+
+</menu>
