@@ -85,7 +85,10 @@ class SigninFragment : BaseFragment() {
     private fun handleSigninResponse(response: SigninResponseDto?) {
         closePreloader()
         response?.let {
-            if(it.token.isNotEmpty()) (activity as? LoginActivity)?.toMainBoard()
+            if(it.token.isNotEmpty()) {
+                signinViewModel.setCurrentUserId("327")
+                (activity as? LoginActivity)?.toMainBoard()
+            }
         }
     }
 

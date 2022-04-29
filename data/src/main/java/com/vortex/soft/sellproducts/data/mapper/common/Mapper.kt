@@ -21,3 +21,9 @@ interface DataMapper<J, S> {
 
     fun mapJsonToSql(type: J): S
 }
+
+interface ComplexSqlMapper<D, S, S1> {
+    fun mapSqlToDomain(type: S, type1: List<S1>): D
+
+    fun mapDomainToSql(type: D): Pair<S, List<S1>>
+}

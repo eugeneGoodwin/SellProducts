@@ -9,4 +9,10 @@ interface PreferencesProvider {
     fun getToken(): Either<FailureType, String>
     fun saveToken(token: String): Either<FailureType, None>
     fun removeToken(): Either<FailureType, None>
+    fun getOrderId(): String
+    fun saveOrderId(orderId: String)
+    fun removeOrderId()
+    fun getCurrentUserId(): String
+    fun saveCurrentUserId(userId: String)
+    fun removeCurrentUserId()
 }

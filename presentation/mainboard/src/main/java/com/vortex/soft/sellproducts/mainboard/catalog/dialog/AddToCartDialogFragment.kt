@@ -57,7 +57,7 @@ class AddToCartDialogFragment : BaseDialogFragment() {
                 }
             }
         )
-        counterProductsCart.setColor(R.color.color_background_blue_2, R.color.color_background_blue_2, R.color.color_black)
+        //counterProductsCart.setColor(R.color.color_background_blue_2, R.color.color_background_blue_2, R.color.color_black)
     }
 
     fun changeTotalPrice(total: String) {
@@ -73,6 +73,8 @@ class AddToCartDialogFragment : BaseDialogFragment() {
             listener = listenerDialog;
             product = productDto;
             orderItem = OrderItemEntity(productDto.id.toInt(),
+                    productDto.description,
+                    productDto.imageUrl,
                     1,
                     productDto.price)
         }.show(activity.supportFragmentManager, "")

@@ -32,7 +32,41 @@ class PreferencesProviderImpl(val prefs: SharedPreferences) : PreferencesProvide
         return Either.Right(None())
     }
 
+    override fun getOrderId(): String {
+        return prefs.getString(ORDER_ID, "") ?: ""
+    }
+
+    override fun saveOrderId(orderId: String) {
+        prefs.edit().apply {
+            putString(ORDER_ID, orderId)
+        }.apply()
+    }
+
+    override fun removeOrderId() {
+        prefs.edit().apply {
+            remove(ORDER_ID)
+        }.apply()
+    }
+
+    override fun getCurrentUserId(): String {
+        return prefs.getString(USER_ID, "") ?: ""
+    }
+
+    override fun saveCurrentUserId(userId: String) {
+        prefs.edit().apply {
+            putString(USER_ID, userId)
+        }.apply()
+    }
+
+    override fun removeCurrentUserId() {
+        prefs.edit().apply {
+            remove(USER_ID)
+        }.apply()
+    }
+
     companion object {
         const val JWT_TOKEN = "jwt_token"
+        const val ORDER_ID = "order_id"
+        const val USER_ID = "user_id"
     }
 }

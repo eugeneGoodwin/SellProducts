@@ -36,6 +36,7 @@ class CatalogAdapter(val activity: FragmentActivity, val listener: (OrderItemDto
             with(itemView) {
                 productNameText.text = product.title
                 productDescriptionText.text = product.description
+                priceText.text = product.price
                 if(product.imageUrl.isNotEmpty()) Glide.with(this).load(product.imageUrl).into(productImage)
                 productCard.setOnClickListener {
                     AddToCartDialogFragment.display(activity, { listener(it) }, product)

@@ -98,7 +98,10 @@ class RegistrationFragment : BaseFragment() {
 
     private fun handleRegisterResponse(response: Boolean?) {
         closePreloader()
-        response?.let { if(it) (activity as? EnrollActivity)?.toMainBoard() }
+        response?.let { if(it) {
+            registerViewModel.setCurrentUserId("333")
+            (activity as? EnrollActivity)?.toMainBoard()
+        } }
     }
 
     private fun handleError(fail: FailureType?) { closePreloader() }

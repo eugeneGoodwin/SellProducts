@@ -58,7 +58,8 @@
                 style="@style/SellProductsText.Small.Plus"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/productDescriptionText"/>
 
             <TextView
                 android:id="@+id/productDescriptionText"
@@ -69,16 +70,17 @@
                 style="@style/SellProductsText.Small.Plus"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/productNameText" />
+                app:layout_constraintTop_toBottomOf="@+id/productNameText"
+                app:layout_constraintBottom_toTopOf="@+id/priceText"/>
             <TextView
                 android:id="@+id/priceText"
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
                 android:layout_marginStart="24dp"
                 android:text="100 $"
-                android:textColor="@android:color/black"
-                android:textSize="24sp"
+                style="@style/SellProductsText.Medium.Plus"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/productDescriptionText" />
@@ -86,12 +88,13 @@
 
         <com.vortex.soft.sellproducts.base.presentation.view.CounterView
             android:id="@+id/counter"
-            android:layout_width="50dp"
+            android:layout_width="95dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/cartItemInfo"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="3dp">
 
         </com.vortex.soft.sellproducts.base.presentation.view.CounterView>
     </androidx.constraintlayout.widget.ConstraintLayout>

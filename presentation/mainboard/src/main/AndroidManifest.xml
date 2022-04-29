@@ -4,7 +4,7 @@
 
     <application
         android:supportsRtl="true"
-        android:theme="@style/SellProductsAppTheme">
+        android:theme="@style/Theme.SellProducts">
         <activity
             android:name=".MainboardActivity"
             android:screenOrientation="portrait" />

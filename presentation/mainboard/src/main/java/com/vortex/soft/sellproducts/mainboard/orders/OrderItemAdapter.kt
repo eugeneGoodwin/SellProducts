@@ -27,7 +27,7 @@ class OrderItemAdapter : RecyclerView.Adapter<OrderItemAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(orderItemDto: OrderItemDto) {
             with(itemView) {
-                productName.text = orderItemDto.productId.toString()
+                productName.text = orderItemDto.productDescription
                 quantity.text = orderItemDto.quantity.toString()
                 totalSum.text = orderItemDto.totalPrice
             }

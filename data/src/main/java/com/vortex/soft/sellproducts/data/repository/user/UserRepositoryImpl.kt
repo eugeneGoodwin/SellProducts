@@ -18,4 +18,12 @@ class UserRepositoryImpl(private val remote: UserRemote,
             remote.getUser(token, userId).map { mapper.mapJsonToDomain(it) }
         }
     }
+
+    override fun getCurrentUserId(): String {
+        return prefProvider.getCurrentUserId()
+    }
+
+    override fun setCurrentUserId(userid: String) {
+        prefProvider.saveCurrentUserId(userid)
+    }
 }

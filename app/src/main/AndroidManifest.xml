@@ -9,11 +9,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/SellProductsAppTheme">
+        android:theme="@style/Theme.SellProducts">
         <activity
             android:name=".controller.RootControllerActivity"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.SellProducts.NoActionBar">
+            android:theme="@style/Theme.SellProducts.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

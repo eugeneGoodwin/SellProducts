@@ -5,6 +5,10 @@ import com.google.gson.annotations.SerializedName
 data class OrderItemJsonDto (
         @SerializedName("product_id")
         val productId: Int,
+        @SerializedName("product_description")
+        val productDescription: String,
+        @SerializedName("product_image_url")
+        val productImageUrl: String,
         @SerializedName("quantity")
         val quantity: Int,
         @SerializedName("price")

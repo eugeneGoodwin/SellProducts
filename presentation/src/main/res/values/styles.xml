@@ -10,6 +10,16 @@
         </item>
     </style>
 
+    <style name="Theme.SellProducts" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@android:color/black</item>
+    </style>
+
+    <style name="Theme.SellProducts.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <style name="SellProductsAppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@android:color/black</item>
     </style>

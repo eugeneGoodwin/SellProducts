@@ -6,4 +6,6 @@ import com.vortex.soft.sellproducts.domain.dto.user.UserDto
 
 interface UserRepository {
     fun getUser(userId: Int): Either<FailureType, UserDto>
+    fun getCurrentUserId(): String
+    fun setCurrentUserId(userid: String)
 }

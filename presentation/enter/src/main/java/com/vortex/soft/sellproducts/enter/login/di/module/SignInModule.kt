@@ -8,7 +8,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val signinModule = module {
-    viewModel{ SigninViewModel(get()) }
+    viewModel{ SigninViewModel(get(), get()) }
 
     scope<LoginActivity> {
         fragment { SigninFragment() }

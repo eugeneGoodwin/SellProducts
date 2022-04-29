@@ -26,6 +26,8 @@ sealed class FailureType {
     object ResponseStatusError : FailureType()
     object RequestError : FailureType()
     object PersistenceError : FailureType()
+    object CartEmptyError : FailureType()
+    object CurrentUserError : FailureType()
 
     object UnauthorizedError : FailureType()
 

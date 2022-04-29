@@ -1,39 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root_view"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@android:color/transparent"
-    android:padding="1dp"
-    android:weightSum="1.5">
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/decButton"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_weight="0.5"
-        android:background="#03A9F4"
-        android:text="-"
-        android:textColor="#ffffff" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgDec"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginStart="1dp"
+        android:background="@drawable/bg_counter"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="8dp"
+        app:srcCompat="@drawable/ic_remove_gray" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/valueCounter"
-        android:layout_width="35dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:text="1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/bg_counter"
         android:gravity="center"
-        android:textAlignment="center"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#000000"
-        android:textStyle="bold" />
+        android:text="0" />
 
-    <Button
-        android:id="@+id/incButton"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_weight="0.5"
-        android:background="#03A9F4"
-        android:text="+"
-        android:textColor="#ffffff" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgInc"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:background="@drawable/bg_counter"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="8dp"
+        app:srcCompat="@drawable/ic_add_gray" />
 </LinearLayout>

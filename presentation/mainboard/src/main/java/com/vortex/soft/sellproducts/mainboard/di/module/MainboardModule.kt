@@ -1,6 +1,8 @@
 package com.vortex.soft.sellproducts.mainboard.di.module
 
 import com.vortex.soft.sellproducts.mainboard.MainboardActivity
+import com.vortex.soft.sellproducts.mainboard.cart.CartFragment
+import com.vortex.soft.sellproducts.mainboard.cart.CartViewModel
 import com.vortex.soft.sellproducts.mainboard.catalog.CatalogFragment
 import com.vortex.soft.sellproducts.mainboard.catalog.CatalogViewModel
 import com.vortex.soft.sellproducts.mainboard.orders.OrderAdapter
@@ -15,9 +17,10 @@ import org.koin.dsl.module
 
 val mainboardModule = module {
 
-    viewModel { CatalogViewModel(get()) }
+    viewModel { CatalogViewModel(get(), get(), get(), get(), get()) }
     viewModel { ProfileViewModel(get()) }
     viewModel { OrdersViewModel(get()) }
+    viewModel { CartViewModel(get(), get()) }
 
     scope<MainboardActivity> {
         fragment { CatalogFragment() }
@@ -25,6 +28,7 @@ val mainboardModule = module {
         }
 
         fragment { ProfileFragment() }
+        fragment { CartFragment() }
 
         fragment { OrdersFragment() }
         scope<OrdersFragment> {

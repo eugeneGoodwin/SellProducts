@@ -8,7 +8,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val enrollModule = module {
-    viewModel{ RegistrationViewModel(get()) }
+    viewModel{ RegistrationViewModel(get(), get()) }
 
     scope<EnrollActivity> {
         fragment { RegistrationFragment() }

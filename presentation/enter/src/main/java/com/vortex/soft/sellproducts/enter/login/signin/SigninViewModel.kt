@@ -5,8 +5,10 @@ import com.vortex.soft.sellproducts.base.presentation.base.BaseViewModel
 import com.vortex.soft.sellproducts.domain.dto.signin.SigninDto
 import com.vortex.soft.sellproducts.domain.dto.signin.SigninResponseDto
 import com.vortex.soft.sellproducts.domain.interactor.usecases.signin.SigninUseCase
+import com.vortex.soft.sellproducts.domain.interactor.usecases.user.SetCurrentUserIdUseCase
 
-class SigninViewModel(val signinUseCase: SigninUseCase) : BaseViewModel() {
+class SigninViewModel(val signinUseCase: SigninUseCase,
+                        val setCurrentUserIdUseCase: SetCurrentUserIdUseCase) : BaseViewModel() {
 
     var signinResponseLiveData: MutableLiveData<SigninResponseDto> = MutableLiveData()
 
@@ -14,5 +16,9 @@ class SigninViewModel(val signinUseCase: SigninUseCase) : BaseViewModel() {
 
     private fun handleSigninResponse(response: SigninResponseDto) {
         signinResponseLiveData.value = response
+    }
+
+    fun setCurrentUserId(userId: String) {
+        setCurrentUserIdUseCase(userId)
     }
 }
