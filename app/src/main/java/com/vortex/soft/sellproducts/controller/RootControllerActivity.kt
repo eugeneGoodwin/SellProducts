@@ -3,6 +3,7 @@ package com.vortex.soft.sellproducts.controller
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.vortex.soft.sellproducts.common.*
 import com.vortex.soft.sellproducts.enter.enroll.EnrollActivity
@@ -12,6 +13,11 @@ import com.vortex.soft.sellproducts.enter.login.LoginActivity
 import com.vortex.soft.sellproducts.mainboard.MainboardActivity
 
 class RootControllerActivity : AppCompatActivity() {
+
+    val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+        val result = it.data?.getStringExtra(APP_ENV_COMMON_DATA_KEY)
+        handleRequestCode(it.resultCode, result)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,38 +30,30 @@ class RootControllerActivity : AppCompatActivity() {
         Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
         Intent.FLAG_ACTIVITY_CLEAR_TASK
         Intent.FLAG_ACTIVITY_NO_HISTORY
-        startActivityForResult(intent, APP_REQUEST_ROOT_ACTIVITY)
+        startForResult.launch(intent)
     }
 
     private fun toEnroll() {
         val intent = Intent(this@RootControllerActivity, EnrollActivity::class.java)
-        startActivityForResult(intent, APP_REQUEST_ROOT_ACTIVITY)
+        startForResult.launch(intent)
     }
 
     private fun toWelcome() {
         val intent = Intent(this@RootControllerActivity, WelcomeActivity::class.java)
-        startActivityForResult(intent, APP_REQUEST_ROOT_ACTIVITY)
+        startForResult.launch(intent)
     }
 
     private fun toLogin() {
         val intent = Intent(this@RootControllerActivity, LoginActivity::class.java)
-        startActivityForResult(intent, APP_REQUEST_ROOT_ACTIVITY)
+        startForResult.launch(intent)
     }
 
     private fun toMainboard(str: String) {
         val intent = Intent(this@RootControllerActivity, MainboardActivity::class.java)
         intent.putExtra(APP_ENV_COMMON_DATA_KEY,str)
-        startActivityForResult(intent, APP_REQUEST_ROOT_ACTIVITY)
+        startForResult.launch(intent)
         //startActivity(intent)
         //finish()
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
-        super.onActivityResult(requestCode, resultCode, intent)
-        val result = intent?.getStringExtra(APP_ENV_COMMON_DATA_KEY)
-        if (requestCode == APP_REQUEST_ROOT_ACTIVITY) {
-            handleRequestCode(resultCode, result)
-        } else throw Exception("Failed attempt to Intent result! Check correct parameter passing to intent")
     }
 
     private fun handleRequestCode(resultCode: Int, result: String?) = when (resultCode) {
@@ -81,9 +79,5 @@ class RootControllerActivity : AppCompatActivity() {
                 finish()
             }
         }
-    }
-
-    companion object {
-        private val APP_REQUEST_ROOT_ACTIVITY = 0x7900
     }
 }
